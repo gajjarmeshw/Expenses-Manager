@@ -1,0 +1,294 @@
+{% extends 'partials/base_auth.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Uni Expenses- Login</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-5 col-md-11">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body">
+                        <!-- Nested Row within Card Body -->
+          
+                            <div class="col-lg-12">
+                
+                          
+                                
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Join Now!</h1>
+                                    </div>
+                                    {% include 'partials/_messages.html' %}
+<main>
+                                    <form class="user" action="{% url 'register' %}" method="post">
+                                      {% csrf_token %}  
+                                      <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" name="username"
+                                                id="usernameField" value="{{fieldValues.username}}"
+                                                placeholder="Enter Username">
+                                        </div>
+                                        <div class="invalid_feedback invalid-feedback" style = "display:none">
+                                        </div>
+                                        <div class="form-group">
+                                          <input type="text" class="form-control form-control-user" name="email"
+                                              id="emailField" value="{{fieldValues.email}}"
+                                              placeholder="Enter Email">
+                                      </div>      <div class="emailFeedbackArea invalid-feedback" style = "display:none">
+                                      </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" name="password"
+                                                id="passwordField" placeholder="Password">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                              <small class="float-right py-3 showPasswordToggle">SHOW</small>
+
+                                            </div>
+                                        </div>
+
+                                        <input class="w-100 btn btn-lg btn-primary submit-btn" type="submit" value="Register"></input>
+
+                                    </form>
+                                  </main>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="{% url 'login' %}">Already have an account?</a>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+  
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+
+
+
+
+
+
+<style>
+    html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: 11px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="email"] {
+  margin-bottom: 11px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+ 
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    .showPasswordToggle{
+      cursor: pointer;
+    }
+  </style>
+<main class="form-signin w-100 m-auto">
+    <form action="{% url 'register' %}" method="post">
+      {% csrf_token %}
+
+      
+      <h1 class="h3 mb-3 fw-normal">Register for free account</h1>
+      {% include 'partials/_messages.html' %}
+
+      <div class="form-floating">
+        <input type="text" class="form-control" name="username" id="usernameField" placeholder="username" value="{{fieldValues.username}}">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="invalid_feedback invalid-feedback" style = "display:none">
+    
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" name="email" id="emailField" placeholder="name@example.com" value="{{fieldValues.email}}">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="emailFeedbackArea invalid-feedback" style = "display:none">
+    
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="passwordField" name="password" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+        <small class="float-right py-3 showPasswordToggle">SHOW</small>
+
+      </div>
+
+      <div class="checkbox mb-3">
+      </div>
+      <button class="w-100 btn btn-lg btn-primary submit-btn" type="submit">Register</button>
+    </form>
+  </main>
+<!-- 
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+
+<div class="card">
+    <div class="card-title">
+        Register for free account
+
+        <form action="" method="post">
+            <div class="form-group">
+                <input type="text" placeholder="Username" name="username" class="form-control form-control-sm" id="usernamefield">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email"  placeholder="Email" class="form-control form-control-sm" id="emailfield">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control form-control-sm "  placeholder="Password" id="passwordfield">
+            <small class="float-right">Show</small>
+            </div>
+            <input type="submit" value="Register" class="btn btn-block">
+        </form>
+    </div> -->
+
+<!-- </div>
+
+`
+    </div>
+    <div class="col-md-3"></div>
+</div> --> {% endcomment %}
+
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock content %}
+

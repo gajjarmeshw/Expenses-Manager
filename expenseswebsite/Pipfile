@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+psycopg2 = "*"
+django-heroku = "*"
+gunicorn = "*"
+whitenoise = "*"
+waitress = "*"
+validate-email = "*"
+source = "*"
+environ = "*"
+six = "*"
+xlwt = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
