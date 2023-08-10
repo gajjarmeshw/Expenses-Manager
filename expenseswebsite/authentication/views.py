@@ -21,7 +21,7 @@ class EmailValidationView(View):
         if not validate_email(email):
             return JsonResponse({'email_error':'Email is invalid'}, status=400)
         if User.objects.filter(email=email).exists():
-            return JsonResponse({'email_error':'Email already exists'}, status=409)
+            return JsonResponse({'email_error':'Email already exists'}, status= 400)
         return JsonResponse({'email_valid': True})
 
 # Create yourviews here.
@@ -30,9 +30,9 @@ class UsernameValidationView(View):
         data = json.loads(request.body)
         username = data['username']
         if not str(username).isalnum():
-            return JsonResponse({'username_error':'username should only contain alphanumeric letters'}, status=401)
+            return JsonResponse({'username_error':'username should only contain alphanumeric letters'}, status=400)
         if User.objects.filter(username=username).exists():
-            return JsonResponse({'username_error':'username already exists'}, status=407)
+            return JsonResponse({'username_error':'username already exists'}, status= 409)
         return JsonResponse({'username_valid': True})
 
 

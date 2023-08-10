@@ -106,7 +106,22 @@
                                   {% endif %}
                                 </div>
 
-
+                                <!-- Pie Chart -->
+                                <div class="col-xl-5 col-lg-3">
+                                  <div class="card shadow mb-3">
+                                      <!-- Card Header - Dropdown -->
+                                      <div
+                                          class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                          <h6 class="m-0 font-weight-bold text-primary">Expenses per category (6 months)</h6>
+                                      </div>
+                                      <!-- Card Body -->
+                                      <div class="card-body" style="width: 350px; height: 350px;">
+                                      
+                                              <canvas id="myChart" style="height: 300px; width: 300px;"></canvas>
+                                  
+                                      </div>
+                                  </div>
+                                </div>
 
 
 
@@ -117,34 +132,12 @@
                         </div>
                     </div>
   
-  </div>
-    
-
-
-    
-</div>
 
 
 
-
-  <!-- Pie Chart -->
-  <div class="col-xl-4 col-lg-6">
-    <div class="card shadow mb-3">
-        <!-- Card Header - Dropdown -->
-        <div
-            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Expenses per category (6 months)</h6>
-        </div>
-        <!-- Card Body -->
-        <div class="card-body" style="width: 350px; height: 350px;">
-        
-                <canvas id="myChart" style="height: 300px; width: 300px;"></canvas>
-    
-        </div>
-    </div>
+  
 </div>
 </div>
-
 <script src="{% static 'js/stats.js' %}"></script>
 
 <script src="{% static 'js/searchExpenses.js' %}"></script>
