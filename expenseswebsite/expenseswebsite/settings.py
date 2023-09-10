@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'expenseswebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'expenseswebsite',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'demo',
         'USER': 'postgres',
-        'PASSWORD': 'gajjar8828',
-        'HOST': 'database.cqabryubjxib.us-east-1.rds.amazonaws.com',
+        'PASSWORD': 'mann8828',
+        'HOST': 'incomeexpensesdb.cxk0kfytogkg.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
